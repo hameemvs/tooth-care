@@ -5,6 +5,9 @@ include __DIR__ . '/../../helpers/AppManager.php';
 $sm = AppManager::getSM();
 $username = $sm->getAttribute("username");
 $permission = $sm->getAttribute("permission");
+
+$currenturl= $_SERVER['SCRIPT_NAME'];
+$currentFilename=basename($currenturl)
 ?>
 
 <!DOCTYPE html>
@@ -91,10 +94,16 @@ $permission = $sm->getAttribute("permission");
                     </li>
 
                     <!-- Dashboard -->
-                    <li class="menu-item ">
+                    <li class="menu-item <?= $currentFilename === "appointments.php" ? 'active' : '' ?>">
                         <a href="<?= url('views/admin/appointments.php') ?>" class="menu-link">
                             <i class="menu-icon tf-icons  bx bx-collection"></i>
                             <div data-i18n="Analytics">Appointments</div>
+                        </a>
+                    </li>
+                    <li class="menu-item <?= $currentFilename === "users.php" ? 'active' : '' ?>">
+                        <a href="<?= url('views/admin/users.php') ?>" class="menu-link">
+                            <i class="menu-icon tf-icons  bx bx-user"></i>
+                            <div data-i18n="Analytics">Users</div>
                         </a>
                     </li>
 
