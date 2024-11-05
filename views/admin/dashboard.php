@@ -1,7 +1,6 @@
 <?php
 require_once('../layouts/header.php');
-$sm = AppManager::getSM();
-$username = $sm->getAttribute("username");
+
 ?>
 
 <!-- Content wrapper -->

@@ -1,8 +1,9 @@
 <?php
 include __DIR__ . '/../../config.php';
-include __DIR__ . '/../../helpers/AppManager.php';
+include BASE_PATH. '/helpers/AppManager.php';
 
 $sm = AppManager::getSM();
+$userId = $sm->getAttribute("userId");
 $username = $sm->getAttribute("username");
 $permission = $sm->getAttribute("permission");
 
@@ -100,13 +101,20 @@ $currentFilename=basename($currenturl)
                             <div data-i18n="Analytics">Appointments</div>
                         </a>
                     </li>
-                    <li class="menu-item <?= $currentFilename === "users.php" ? 'active' : '' ?>">
-                        <a href="<?= url('views/admin/users.php') ?>" class="menu-link">
-                            <i class="menu-icon tf-icons  bx bx-user"></i>
-                            <div data-i18n="Analytics">Users</div>
-                        </a>
-                    </li>
-
+                    <?php if ($permission == 'operator') : ?>
+                        <li class="menu-item <?= $currentFilename === "doctors.php" ? 'active' : '' ?> ">
+                            <a href="<?= url('views/admin/doctors.php') ?>" class="menu-link">
+                                <i class="menu-icon tf-icons  bx bx-plus-medical"></i>
+                                <div data-i18n="Analytics">Doctors</div>
+                            </a>
+                        </li>
+                        <li class="menu-item <?= $currentFilename === "users.php" ? 'active' : '' ?> ">
+                            <a href="<?= url('views/admin/users.php') ?>" class="menu-link">
+                                <i class="menu-icon tf-icons  bx bx-user"></i>
+                                <div data-i18n="Analytics">Users</div>
+                            </a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </aside>
             <!-- / Menu -->
