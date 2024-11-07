@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['user_id']) && isset($_G
     try {
         $user_id = $_GET['user_id'];
         $userModel = new User();
-        $user = $userModel->getById($user_id);
+        $user = $userModel->getUserWithDoctorById($user_id);
         if ($user) {
             echo json_encode(['success' => true, 'message' => "User created successfully!", 'data' => $user]);
         } else {

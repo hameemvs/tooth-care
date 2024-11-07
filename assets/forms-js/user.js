@@ -140,13 +140,34 @@ async function getUserById(id) {
                 var email = response.data.email;
                 var permission = response.data.permission;
                 var is_active = response.data.is_active;
+                 // var doctorName = response.data.name;
+                // var doctorId = response.data.doctor_id;
 
                 $('#edit-user-modal #user_id').val(user_id);
                 $('#edit-user-modal #user-name').val(username);
                 $('#edit-user-modal #email').val(email);
-                $('#edit-user-modal #permission option[value="' + permission + '"]').prop('selected', true);
+                $('#edit-user-modal #edit_permission option[value="' + permission + '"]').prop('selected', true);
                 $('#edit-user-modal #is_active option[value="' + is_active + '"]').prop('selected', true);
-
+                if (permission === 'doctor') {
+                    $('#edit-additional-fields').html(
+                        '<div class="row mt-2">' +
+                        '<div class="col-12 mb-3">' +
+                        '<label for="name" class="form-label">Doctor Name</label>' +
+                        '<input type="text" id="name" name="doctor_name" class="form-control" placeholder="Enter Name" required />' +
+                        '</div>' +
+                        '<div class="col-12 mb-3">' +
+                        '<label for="about" class="form-label">About Doctor</label>' +
+                        '<textarea id="about" name="about_doctor" class="form-control" placeholder="Enter About" required></textarea>' +
+                        '</div>' +
+                        '<div class="col-12 mb-3">' +
+                        '<label for="formFile" class="form-label">Doctor Photo</label>' +
+                        '<input class="form-control" name="image" id="image" type="file" accept="image/*">' +
+                        '</div>' +
+                        '</div>'
+                    );
+                } else {
+                    $('#edit-additional-fields').empty();
+                }
                 $('#edit-user-modal').modal('show');
             }
         },

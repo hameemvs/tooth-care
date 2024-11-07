@@ -172,4 +172,14 @@ class User extends BaseModel
         $result = $this->pm->run('SELECT MAX(id) as lastInsertedId FROM users', null, true);
         return $result['lastInsertedId'] ?? 100;
     }
+    public function getUserWithDoctorById($id)
+    {
+        $param = array(':id' => $id);
+        return $this->pm->run("
+            SELECT users.*, doctors.id AS doctor_id, doctors.*,users.id AS id
+            FROM " . $this->getTableName() . " AS users
+            LEFT JOIN doctors ON doctors.user_id = users.id
+            WHERE users.id = :id
+        ", $param, true);
+    }
 }

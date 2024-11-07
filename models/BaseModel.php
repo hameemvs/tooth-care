@@ -44,7 +44,6 @@ abstract class BaseModel
         $param = array(':id' => $id);
         return $this->pm->run("SELECT * FROM " . $this->getTableName() . " WHERE id = :id", $param, true);
     }
-
     // Method to retrieve all records based on a specific column and value from the associated table
     public function getAllByColumnValue($column, $value)
     {

@@ -160,11 +160,11 @@ if ($permission != 'operator') dd('Access Denied...!');
                         </div>
                     </div>
                     <div class="mb-3 mt-3">
-                        <div id="alert-container"></div>
-                    </div>
-                    <div class="mb-3 mt-3">
                         <div id="additional-fields">
                         </div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <div id="alert-container"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -269,7 +269,11 @@ if ($permission != 'operator') dd('Access Denied...!');
                         </div>
                     </div>
                     <div class="mb-3 mt-3">
-                        <div id="edit-alert-container"></div>
+                        <div id="edit-additional-fields">
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <div id="edit-additional-fields"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
