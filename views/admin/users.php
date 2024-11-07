@@ -5,6 +5,7 @@ include BASE_PATH . '/models/Users.php';
 $userModel = new User();
 $table = $userModel->getTableName();
 $data = $userModel->getAll();
+if ($permission != 'operator') dd('Access Denied...!');
 ?>
 
 <div class="container-xxl flex-grow-1 container-p-y">

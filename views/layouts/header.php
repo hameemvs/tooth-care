@@ -27,7 +27,7 @@ $currentFilename=basename($currenturl)
         name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Tooth Care App ImTS</title>
+    <title>Tooth Care App</title>
 
     <meta name="description" content="" />
     <!-- Favicon -->
@@ -75,7 +75,7 @@ $currentFilename=basename($currenturl)
                         <span class="app-brand-logo demo">
 
                         </span>
-                        <span class="app-brand-text demo menu-text fw-bolder ms-2 text-capitalize">ImTS</span>
+                        <span class="app-brand-text demo menu-text fw-bolder ms-2 text-capitalize">Tooth Care</span>
                     </a>
 
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">

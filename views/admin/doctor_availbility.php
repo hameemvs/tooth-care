@@ -4,6 +4,7 @@ include BASE_PATH . '/models/DoctorAvailability.php';
 
 $DoctorAvailabilityModel = new DoctorAvailability();
 $data = $DoctorAvailabilityModel->getAll();
+if ($permission != 'operator') dd('Access Denied...!');
 
 // dd($data);
 ?>

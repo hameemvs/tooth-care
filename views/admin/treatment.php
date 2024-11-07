@@ -4,6 +4,7 @@ include BASE_PATH . '/models/Treatment.php';
 
 $TreatmentModel = new Treatment();
 $data = $TreatmentModel->getAll();
+if ($permission != 'operator') dd('Access Denied...!');
 
 // dd($data);
 ?>
